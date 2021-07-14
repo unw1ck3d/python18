@@ -1,10 +1,8 @@
 # Считаем кредит
 
 name1 = input("Введите имя первого человека: ")
-name2 = input("Введите имя второго человека: ")
 
 salary1 = input("зп первого: ")
-salary2 = input("зп второго: ")
 
 credit = float(input("Введите сумму кредита: "))
 period = float(input("Введите срок в месяцах: "))
@@ -13,4 +11,3 @@ procent = float(input("Введите процент: "))
 pay_per_month = credit / period + (credit / 100 * procent) / 12
 print("Ежемесячный платёж составит -", pay_per_month, "рублей")
 print(name1, "сможет потратить", float(salary1) - pay_per_month)
-print(name2, "сможет потратить", float(salary2) - pay_per_month)
