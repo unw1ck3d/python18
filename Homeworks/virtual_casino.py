@@ -11,20 +11,18 @@ log = []  # Пустой спсок/массив
 username = input("Привет, игрок!\nПожалуйста, сообщи своё имя: ")
 
 # Приветствие
-print('Добро пожаловать в наше Казино,', username, end='!\n')
-print('')
+print('Добро пожаловать в наше Казино,', username)
 
 # Выводим сообщение
-print('Вам предоставлен депозит на', balance, 'кредитов', end='!\n')
-print('')
+print('Вам предоставлен депозит на', balance, 'кредитов')
 
 # Ввыполняем до тех пор, пока баланс игрока больше 0
 while balance > 0:
     # Выводим сообщение о начале игры
     print('Баланс вашего счёта', username, 'составляет =', balance)
-    print('')
+#     print('')
     print('Бросаем кубики!')
-    print('')
+#     print('')
 
     # Получаем случайное число в промежутке 12
     value = random.randint(2, 12)
@@ -44,27 +42,27 @@ while balance > 0:
             break
 
     # Если предположение игрока верно и укладывается в диапозон значений
-    if (2 <= user_value <= 12) and (user_value == value):
+    if user_value == value:
         balance = balance + quote_credit
-        print('Бинго,', username, 'Вы угадали!\nВам начислено ', quote_credit, end='кредитов!\n')
-        print('Ваше значение = ', user_value, '\nВыпавшее значение =', value)
-        print('Баланс Вашего счёта', balance)
+        print('Бинго,', username, 'Вы угадали!\nВам начислено', quote_credit, 'кредитов!', end=" ")
+        print('Ваше значение =', user_value, '\nВыпавшее значение =', value)
+#         print('Баланс Вашего счёта', balance)
 
     # Если предположение игрока неверно
     else:
         balance = balance - quote_credit
-        print('Вы не угадали,', username, '\n', 'С Вашего счёта списано ', quote_credit, '.\n')
-        print('Ваше значение = ', user_value, '\nВыпавшее значение =', value)
-        print('Баланс Вашего счёта', balance)
+        print('Вы не угадали,', username, '\nС Вашего счёта списано', quote_credit, end=", ")
+        print('Ваше значение =', user_value, ', Выпавшее значение =', value)
+#         print('Баланс Вашего счёта', balance)
 
-    print('')  # Пустая строка
+#     print('')  # Пустая строка
 
     # Вносим запись в массив/спмсок
     log.append(['Игра загадала: ' + str(value) + ';' +'Моя попытка: ' + str(user_value) + ';' +'На счету: '+ str(balance)])
     # log.append(['Игра загадала: ', str(value), 'Моя попытка: ', str(user_value), 'На счету: ', str(balance)])
+    print("-"*50)
 
-if balance == 0:
-    print('Ваш баланс равен 0. Продолжение возможно после пополнения баланса.')
-    log.append(['Ваш баланс равен 0. Продолжение возможно после пополнения баланса.'])
-    for item in log:
-        print(item)
+print('Ваш баланс равен 0. Продолжение возможно после пополнения баланса.')
+log.append(['Ваш баланс равен 0. Продолжение возможно после пополнения баланса.'])
+for item in log:
+    print(item)
