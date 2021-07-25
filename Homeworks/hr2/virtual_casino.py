@@ -38,13 +38,14 @@ while balance > 0:
             break
         # Если полученный ввод не число, будет вызвано исключение
         except ValueError:
-            print("Ошибка! Вы ввели недопустимое значение! Внимательно прочтите условие приглашения а ввод данных.")
+            print("Ошибка! Вы ввели недопустимое значение! Внимательно прочтите условие приглашения на ввод данных.")
         else:
             print('Значение принято.')
             break
 
     # Если предположение игрока верно и укладывается в диапозон значений
-    if (2 <= user_value <= 12) and (user_value == value):
+#    if (2 <= user_value <= 12) and (user_value == value):
+    if (user_value == value):
         balance = balance + quote_credit
         print('Бинго,', username, 'Вы угадали!\nВам начислено ', quote_credit, end='кредитов!\n')
         print('Ваше значение = ', user_value, '\nВыпавшее значение =', value)
