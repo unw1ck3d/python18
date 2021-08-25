@@ -18,9 +18,6 @@ import re
 # Пустой список
 galaxies = []
 
-# Переменная
-i = 0
-
 # Открываем файл в кодировке UTF-8
 with open('lesson09_closest_galaxies.csv', 'r', encoding="utf-8") as file:
     # Каждую строку файла
